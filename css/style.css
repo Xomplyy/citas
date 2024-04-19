@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body input[type="text"] {
+    text-transform: capitalize;
+}
+h1, h2, h3 {
+    text-align: center;
+}
+img {
+    width: 100%;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+.date_header {
+    display: flex;
+    align-items: center;
+}
+.date_header label,input {
+    display: block;
+}
+.btn_header{
+    display: flex;
+}
+.forms {
+    max-width: 100rem;
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+.form {
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+}
+.rows {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem;
+}
+.rows div {
+    display: flex;
+    flex-direction: column;
+}
+.form input[name="hour"] {
+    height: 19px;
+}
+.form input[name="date"] {
+    height: 19px;
+}
+.form button {
+    width: 3rem;
+    height: 3rem;
+    padding: 1px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
