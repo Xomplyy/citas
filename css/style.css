@@ -1,8 +1,12 @@
+:root {
+    --color_primary: rgb(30, 30, 102);
+}
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 html {
     font-size: 62.5%;
 }
@@ -19,33 +23,91 @@ h1, h2, h3 {
 img {
     width: 100%;
 }
+.button {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    border: none;
+    padding: 4px;
+    border-radius: 6px;
+}
+.button:hover {
+    position: relative;
+    bottom: 1px;
+    right: 1px;
+}
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: var(--color_primary);
+    color: white;
+    padding: 1.5rem 5rem;
 }
 .date_header {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    gap: 3rem;
 }
 .date_header label,input {
     display: block;
 }
 .btn_header{
     display: flex;
+    gap: 1rem;
+    height: 3rem;
+}
+.btn_search {
+    transform:  scaleX(-1);
+}
+.btn_nav {
+    background-color: rgb(255, 255, 255, 0.9);
+}
+.buttons {
+    justify-content: flex-end; 
+} 
+.btn{
+    background-color: var(--color_primary);
+    justify-content: flex-end;
+}
+.main {
+    display: flex;
+    height: 85vh;
+}
+.appointments {
+    width: 60%;
+    height: 100vh;
+    background-color: rgb(41, 40, 40);
 }
 .forms {
-    max-width: 100rem;
-    width: 90%;
+    width: 40%;
     display: flex;
     margin: 0 auto;
-    margin-top: 2rem;
-    gap: 2rem;
+    align-items: center;
+    padding: 3rem;
 }
 .form {
     border: 1px solid grey;
     display: flex;
     flex-direction: column;
-    padding: 1rem 2rem;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+.form_appointments {
+    height: 30rem;
+    display: none;
+}
+.form_customer {
+    display: none;
+}
+.availability {
+    /* display: none; */
+}
+.row_availability{
+    display: flex;
+    align-items: flex-end;
+    gap: 5rem;
 }
 .rows {
     display: flex;
@@ -62,12 +124,9 @@ img {
 .form input[name="date"] {
     height: 19px;
 }
-.form button {
-    width: 3rem;
-    height: 3rem;
-    padding: 1px;
-    cursor: pointer;
-}
+
+
+
 
 
 

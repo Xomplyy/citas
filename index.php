@@ -22,74 +22,104 @@
                 <input type="date" name="dateEnd" id="ldateEnd">
             </div>
             <div>
-                <button type="button">Buscar</button>
+                <button class="button btn_nav btn_search" type="button" title="Buscar"><img src="img/search.png" alt="icono buscar"></button>
             </div>
         </div>
         <div class="btn_header">
-            <button type="button">Disponibilidad</button>
-            <button type="button">Cliente</button>
-            <button type="button">Citas</button>
+            <button class="button btn_nav" type="button" title="Horario"><img src="img/appointement_management.png" alt="icono horarios"></button>
+            <button class="button btn_nav" type="button" title="Clientes"><img src="img/add__customer.png" alt="icono clientes"></button>
+            <button class="button btn_nav" type="button" title="Citas"><img src="img/appointments.png" alt="icono citas"></button>
         </div>
     </header>
-    <main>
+    <main class="main">
+        <div class="appointments">
+        </div>
         <div class="forms">
-            <div>
-                <div class="form_appointments form">
-                    <h2>Citas</h2>
-                    <div class="cont_form">
-                        <div class="rows">
-                            <div>
-                                <label for="ldni_appo">Cedula</label>
-                                <input type="number" name="dni_appo" id="ldni_appo">
-                            </div>
-                            <div>
-                                <label for="lhour">Hora</label>
-                                <input type="time" name="hour" id="lhour">
-                            </div>
+            <div class="form_appointments form">
+                <h2>Citas</h2>
+                <div class="cont_form">
+                    <div class="rows">
+                        <div>
+                            <label for="ldni">Cedula</label>
+                            <input type="number" name="dni" id="ldni">
                         </div>
-                        <div class="rows">
-                            <div>
-                                <label for="ladviser">Asesor</label>
-                                <input type="text" name="adviser" id="ladviser">
-                            </div>
-                            <div>
-                                <label for="">Fecha</label>
-                                <input type="date" name="date" id="lhour">
-                            </div>
+                    </div>
+                    <div class="rows">
+                        <div>
+                            <label for="ldate">Fecha</label>
+                            <input type="date" name="date" id="ldate">
                         </div>
-                        <div class="rows buttons">
-                            <button><img src="img/delete.png" alt="icono eliminar"></button>
-                            <button><img src="img/save.png" alt="icono "></button>
-                            <button><img src="img/search.png" alt=""></button>
+                    </div>
+                    <div class="rows">
+                        <div>
+                            <label for="lhour">Hora</label>
+                            <input type="time" name="hour" id="lhour">
+                        </div>
+                    </div>
+                    <div class="rows">
+                        <div>
+                            <label for="ladviser">Asesor</label>
+                            <input type="text" name="adviser" id="ladviser">
                         </div>
                     </div>
                 </div>
-                <div class="form_customer form">
-                    <h2>Cliente</h2>
-                    <div class="cont_form">
-                        <div class="rows">
-                            <div>
-                                <label for="">Nombre</label>
-                                <input type="text" name="" id="">
-                            </div>
-                            <div>
-                                <label for="">Apellido</label>
-                                <input type="text" name="" id="">
-                            </div>
+                <div class="rows buttons">
+                    <button class="button btn"><img src="img/delete_1.png" alt="icono eliminar"></button>
+                    <button class="button btn"><img src="img/save_1.png" alt="icono guardar"></button>
+                    <button class="button btn btn_search"><img src="img/search_1.png" alt="icono buscar"></button>
+                </div>
+            </div>
+            <div class="form_customer form">
+                <h2>Cliente</h2>
+                <div class="cont_form">
+                    <div class="rows">
+                        <div>
+                            <label for="ldni">Cedula</label>
+                            <input type="number" name="dni" id="ldni">
                         </div>
-                        <div class="rows">
-                            <div>
-                                <label for="">Correo</label>
-                                <input type="text" name="" id="">
-                            </div>
-                            <div>
-                                <label for="">Telefono</label>
-                                <input type="text" name="" id="">
-                            </div>
+                    </div>
+                    <div class="rows">
+                        <div>
+                            <label for="">Nombre</label>
+                            <input type="text" name="" id="">
                         </div>
-                        <div class="rows buttons">
-                            <button><img src="img/delete.png" alt="icono eliminar"></button>
-                            <button><img src="img/save.png" alt="icono "></button>
+                    </div>
+                    <div class="rows">
+                        <div>
+                            <label for="">Apellido</label>
+                            <input type="text" name="" id="">
+                        </div>
+                    </div>
+                    <div class="rows">
+                        <div>
+                            <label for="">Telefono</label>
+                            <input type="text" name="" id="">
+                        </div>
+                    </div>
+                    <div class="rows">
+                        <div>
+                            <label for="">Correo</label>
+                            <input type="text" name="" id="">
+                        </div>
+                    </div>
+                </div>
+                <div class="rows buttons">
+                    <button class="button btn"><img src="img/delete_1.png" alt="icono eliminar"></button>
+                    <button class="button btn"><img src="img/save_1.png" alt="icono guardar"></button>
+                    <button class="button btn btn_search"><img src="img/search_1.png" alt="icono buscar"></button>
+                </div>
+            </div>
+            <div class="availability form">
+                <h2>Cliente</h2>
+                <div class="cont_form">
+                    <div class="row_availability">
+                        <div>
+                            <label for="">Hora</label>
+                            <input type="time" name="" id="">
+                        </div>
+                        <div class="buttons">
+                            <button class="button btn"><img src="img/delete_1.png" alt="icono eliminar"></button>
+                            <button class="button btn"><img src="img/save_1.png" alt="icono guardar"></button>
                         </div>
                     </div>
                 </div>
