@@ -70,6 +70,7 @@ img {
     background-color: var(--color_primary);
     justify-content: flex-end;
 }
+
 .main {
     display: flex;
     height: 85vh;
@@ -77,7 +78,38 @@ img {
 .appointments {
     width: 60%;
     height: 100vh;
-    background-color: rgb(41, 40, 40);
+    background-color: rgb(53, 52, 52);
+    display: flex;
+}
+.hours {
+    background-color: rgb(30, 30, 102);
+    width: 10rem;
+    height: 5rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.7rem;
+    border-style: solid;
+    border-width: 0px 5px 5px 0px;
+    border-radius: 1.5rem;
+}
+.hrs_active {
+    background-color: rgb(6, 139, 248);
+    border-color: rgb(3, 89, 160);
+    cursor: pointer;
+}
+.hrs_active:hover {
+    position: relative;
+    bottom: 2px;
+    right: 2px;
+}
+.hrs_notActive {
+    background-color: rgb(3, 45, 161);
+    border-color: rgb(2, 35, 126);
+    color: rgb(170, 169, 169);
+    cursor: default;
 }
 .forms {
     width: 40%;
@@ -95,16 +127,15 @@ img {
     border-radius: 2rem;
 }
 .form_appointments {
-    height: 30rem;
-    display: none;
+    display: flex;
 }
 .form_customer {
     display: none;
 }
-.availability {
-    /* display: none; */
+.form_schedules {
+    display: none;
 }
-.row_availability{
+.row_schedules{
     display: flex;
     align-items: flex-end;
     gap: 5rem;
