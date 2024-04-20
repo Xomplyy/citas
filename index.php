@@ -121,7 +121,7 @@
                     <div class="row_schedules">
                         <div>
                             <label for="">Hora</label>
-                            <input type="time" name="" id="">
+                            <input type="time" name="schedule" id="lschedule">
                         </div>
                         <div class="buttons">
                             <button class="button btn" name="deleteSch" id="btn_deleteSch"><img src="img/delete_1.png" alt="icono eliminar"></button>
@@ -136,7 +136,13 @@
         document.querySelectorAll('.button').forEach(function(btn){
             btn.addEventListener('click',function(e){
                 let name = this.name;
-                let schedules = document.querySelector(".form_schedules");
+                displayForms(name);
+                // console.log(name);
+            });
+        });
+
+        function displayForms(name){
+            let schedules = document.querySelector(".form_schedules");
                 let customer = document.querySelector(".form_customer");
                 let appointments = document.querySelector(".form_appointments");
                 switch(name){
@@ -156,9 +162,7 @@
                         customer.style.display = 'none';
                         break;
                 };
-                console.log(name);
-            });
-        });
+        };
     </script>
 </body>
 
