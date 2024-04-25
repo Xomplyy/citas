@@ -153,10 +153,6 @@ img {
     gap: 2rem;
     margin: 1rem;
 }
-.rows div {
-    display: flex;
-    flex-direction: column;
-}
 .form input[name="hour"] {
     height: 19px;
 }
@@ -171,18 +167,20 @@ img {
 
 /**************** ALERT ********************/
 .alert {
-    position: relative ;
-    top: 9px;
-    left: -2px;
+    position: relative;
+    top: 7px;
+    left: -5px;
     background: var(--fond);
     border: 1px solid var(--border);
-    width: 19rem;
+    width: 20rem;
     height: 4rem;
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgb(88, 88, 88);
     display: flex;
     justify-content: space-around;
     cursor: default;
+    z-index: 1;
+    color: black;
 }
 .alert::after,
 .alert::before {

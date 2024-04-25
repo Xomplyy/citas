@@ -15,37 +15,30 @@
     <header class="header">
         <div class="date_header">
             <div>
-                <label for="ldateIn">Fecha Inicio</label>
-                <input type="date" name="dateIn" id="ldateIn">
+                <label for="dateIn">Fecha Inicio</label>
+                <input type="date" name="dateIn" id="dateIn">
             </div>
             <div>
-                <label for="ldateEnd">Fecha Inicio</label>
-                <input type="date" name="dateEnd" id="ldateEnd">
+                <label for="dateEnd">Fecha Inicio</label>
+                <input type="date" name="dateEnd" id="dateEnd">
             </div>
             <div>
-                <button class="button btn_nav btn_search" type="button" title="Buscar" name="search" id="btn_search"><img src="img/search.png" alt="icono buscar"></button>
+                <button class="button btn_nav btn_search" type="button" title="Buscar" name="search"
+                    id="btn_search"><img src="img/search.png" alt="icono buscar"></button>
             </div>
         </div>
         <div class="btn_header">
-            <button class="button btn_nav" type="button" title="Horario" name="schedules" id="btn_schedules"><img src="img/appointement_management.png" alt="icono horarios"></button>
-            <button class="button btn_nav" type="button" title="Clientes" name="customer" id="btn_customer"><img src="img/add__customer.png" alt="icono clientes" for="btn_customer"></button>
-            <button class="button btn_nav" type="button" title="Citas" name="appointment" id="btn_appointment"><img src="img/appointments.png" alt="icono citas"></button>
+            <button class="button btn_nav" type="button" title="Horario" name="schedules" id="btn_schedules"><img
+                    src="img/appointement_management.png" alt="icono horarios"></button>
+            <button class="button btn_nav" type="button" title="Clientes" name="customer" id="btn_customer"><img
+                    src="img/add__customer.png" alt="icono clientes" for="btn_customer"></button>
+            <button class="button btn_nav" type="button" title="Citas" name="appointment" id="btn_appointment"><img
+                    src="img/appointments.png" alt="icono citas"></button>
         </div>
     </header>
     <main class="main">
         <div class="appointments">
             <div class="cont_appo">
-
-                <!-- <div class="hours hrs_active">
-                    <div>
-                        <p>09:00</p>
-                    </div>
-                </div>
-                <div class="hours hrs_active">
-                    <div>
-                        <p>10:00</p>
-                    </div>
-                </div> -->
 
             </div>
         </div>
@@ -55,33 +48,36 @@
                 <div class="cont_form">
                     <div class="rows">
                         <div>
-                            <label for="ldni">Cedula</label>
-                            <input type="number" name="dni" id="ldni">
+                            <label for="dniAppo">Cedula</label>
+                            <input type="number" name="dniAppo" id="dniAppo">
                         </div>
                     </div>
                     <div class="rows">
                         <div>
-                            <label for="ldate">Fecha</label>
-                            <input type="date" name="date" id="ldate">
+                            <label for="date">Fecha</label>
+                            <input type="date" name="date" id="date">
                         </div>
                     </div>
                     <div class="rows">
                         <div>
-                            <label for="lhour">Hora</label>
-                            <input type="time" name="hour" id="lhour">
+                            <label for="hour">Hora</label>
+                            <input type="time" name="hour" id="hour">
                         </div>
                     </div>
                     <div class="rows">
                         <div>
-                            <label for="ladviser">Asesor</label>
-                            <input type="text" name="adviser" id="ladviser">
+                            <label for="adviser">Asesor</label>
+                            <input type="text" name="adviser" id="adviser">
                         </div>
                     </div>
                 </div>
                 <div class="rows buttons">
-                    <button class="button btn" name="delete" id="btn_delete"><img src="img/delete_1.png" alt="icono eliminar"></button>
-                    <button class="button btn" name="save" id="btn_save"><img src="img/save_1.png" alt="icono guardar"></button>
-                    <button class="button btn btn_search" name="searchAppo" id="btn_searchAppo"><img src="img/search_1.png" alt="icono buscar"></button>
+                    <button class="button btn" name="deleteAppo" id="btn_delete"><img src="img/delete_1.png"
+                            alt="icono eliminar"></button>
+                    <button class="button btn" name="saveAppo" id="btn_save"><img src="img/save_1.png"
+                            alt="icono guardar"></button>
+                    <button class="button btn btn_search" name="searchAppo" id="btn_search"><img src="img/search_1.png"
+                            alt="icono buscar"></button>
                 </div>
             </div>
             <div class="form_customer form">
@@ -89,39 +85,42 @@
                 <div class="cont_form">
                     <div class="rows">
                         <div>
-                            <label for="ldni">Cedula</label>
-                            <input type="number" name="dni" id="ldni">
+                            <label for="dniCust">Cedula</label>
+                            <input type="number" name="dniCust" id="dniCust">
                         </div>
                     </div>
                     <div class="rows">
                         <div>
-                            <label for="">Nombre</label>
-                            <input type="text" name="" id="">
+                            <label for="name">Nombre</label>
+                            <input type="text" name="name" id="name">
                         </div>
                     </div>
                     <div class="rows">
                         <div>
-                            <label for="">Apellido</label>
-                            <input type="text" name="" id="">
+                            <label for="lastname">Apellido</label>
+                            <input type="text" name="lastname" id="lastname">
                         </div>
                     </div>
                     <div class="rows">
                         <div>
-                            <label for="">Telefono</label>
-                            <input type="text" name="" id="">
+                            <label for="phone">Telefono</label>
+                            <input type="number" name="phone" id="phone">
                         </div>
                     </div>
                     <div class="rows">
                         <div>
-                            <label for="">Correo</label>
-                            <input type="text" name="" id="">
+                            <label for="email">Correo</label>
+                            <input type="email" name="email" id="email">
                         </div>
                     </div>
                 </div>
                 <div class="rows buttons">
-                    <button class="button btn" name="deleteCust" id="btn_deleteCust"><img src="img/delete_1.png" alt="icono eliminar"></button>
-                    <button class="button btn" name="saveCust" id="btn_saveCust"><img src="img/save_1.png" alt="icono guardar"></button>
-                    <button class="button btn btn_search" name="searchCust" id="btn_searchCust"><img src="img/search_1.png" alt="icono buscar"></button>
+                    <button class="button btn" name="deleteCust" id="btn_deleteCust"><img src="img/delete_1.png"
+                            alt="icono eliminar"></button>
+                    <button class="button btn" name="saveCust" id="btn_saveCust"><img src="img/save_1.png"
+                            alt="icono guardar"></button>
+                    <button class="button btn btn_search" name="searchCust" id="btn_searchCust"><img
+                            src="img/search_1.png" alt="icono buscar"></button>
                 </div>
             </div>
             <div class="form_schedules form">
@@ -129,13 +128,14 @@
                 <div class="cont_form">
                     <div class="row_schedules">
                         <div>
-                            <label for="">Hora</label>
-                            <input type="time" name="schedule" id="lschedule">
-                            <div id="empty"></div>
+                            <label for="schedule">Hora</label>
+                            <input type="time" name="schedule" id="schedule">
                         </div>
                         <div class="buttons">
-                            <button class="button btn" name="deleteSch" id="btn_deleteSch"><img src="img/delete_1.png" alt="icono eliminar" name="imgdeleteSch"></button>
-                            <button class="button btn" name="saveSch" id="btn_saveSch"><img src="img/save_1.png" alt="icono guardar" name="imgbtn_saveSch"></button>
+                            <button class="button btn" name="deleteSch" id="btn_deleteSch"><img src="img/delete_1.png"
+                                    alt="icono eliminar"></button>
+                            <button class="button btn" name="saveSch" id="btn_saveSch"><img src="img/save_1.png"
+                                    alt="icono guardar"></button>
                         </div>
                     </div>
                 </div>
@@ -144,21 +144,107 @@
     </main>
     <script>
         fecthHours();
-        document.querySelectorAll('.button').forEach(function(btn) {
-            btn.addEventListener('click', function() {
+        document.querySelectorAll('.button').forEach(function (btn) {
+            btn.addEventListener('click', function () {
                 let btnName = this.name;
+                // console.log(btnName);
                 if (btnName == "schedules" || btnName == "customer" || btnName == "appointment") {
                     displayForms(btnName);
+                    document.querySelector("#schedule").value = "";
+                    document.querySelector("#hour").value = "";
                 } else if (btnName == "saveSch" || btnName == "deleteSch") {
                     schedules(btnName);
                     fecthHours();
-                    document.querySelector("#lschedule").value = "";
-                    document.querySelector("#lschedule").focus();
-
+                    document.querySelector("#schedule").focus();
+                } else if (btnName == "deleteCust" || btnName == "saveCust" || btnName == "searchCust") {
+                    customer(btnName);
+                } else if (btnName == "deleteAppo" || btnName == "saveAppo" || btnName == "searchAppo") {
+                    appointments(btnName);
+                } else {
+                    search(btnName);
                 };
             });
         });
-       
+        function search(btnName) {
+            let dateIni = document.getElementById("dateIn").name;
+            let dateEnd = document.getElementById("dateEnd").name;
+            if (document.getElementById("dateIn").value == "") {
+                alertEmpty(dateIni);
+                return;
+            } else if (document.getElementById("dateEnd").value == "") {
+                alertEmpty(dateEnd);
+                return;
+            }
+            //// AJAX PARA COSULTA //////  
+        }
+        function appointments(btnName) {
+            let dni = document.getElementById("dniAppo").name;
+            let date = document.getElementById("date").name;
+            let hour = document.getElementById("hour").name;
+            let adviser = document.getElementById("adviser").name;
+            if (btnName == "searchAppo") {
+                if (document.getElementById("dniAppo").value == "") {
+                    alertEmpty(dni);
+                    return;
+                }
+            } else {
+                if (document.getElementById("dniAppo").value == "") {
+                    alertEmpty(dni);
+                    return;
+                } else if (document.getElementById("date").value == "") {
+                    alertEmpty(date);
+                    return;
+                } else if (document.getElementById("hour").value == "") {
+                    alertEmpty(hour);
+                    return;
+                } else if (document.getElementById("adviser").value == "") {
+                    alertEmpty(adviser);
+                    return;
+                }
+            }
+            document.getElementById("dniAppo").value = "";
+            document.getElementById("date").value = "";
+            document.getElementById("hour").value = "";
+            document.getElementById("adviser").value = "";
+
+            //// AJAX PARA COSULTA //////  
+        };
+        function customer(btnName) {
+            let dni = document.getElementById("dniCust").name;
+            let name = document.getElementById("name").name;
+            let lastname = document.getElementById("lastname").name;
+            let phone = document.getElementById("phone").name;
+            let email = document.getElementById("email").name;
+            if (btnName == "searchCust") {
+                if (document.getElementById("dniCust").value == "") {
+                    alertEmpty(dni);
+                    return;
+                }
+            } else {
+                if (document.getElementById("dniCust").value == "") {
+                    alertEmpty(dni);
+                    return;
+                } else if (document.getElementById("name").value == "") {
+                    alertEmpty(name);
+                    return;
+                } else if (document.getElementById("lastname").value == "") {
+                    alertEmpty(lastname);
+                    return;
+                } else if (document.getElementById("phone").value == "") {
+                    alertEmpty(phone);
+                    return;
+                } else if (document.getElementById("email").value == "") {
+                    alertEmpty(email);
+                    return;
+                };
+            }
+            document.getElementById("dniCust").value = "";
+            document.getElementById("name").value = "";
+            document.getElementById("lastname").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("email").value = "";
+            //// AJAX PARA COSULTA //////  
+        };
         function displayForms(btn) {
             let schedules = document.querySelector(".form_schedules");
             let customer = document.querySelector(".form_customer");
@@ -182,9 +268,9 @@
             };
         };
         function schedules(btnName) {
-            let time = document.getElementById("lschedule").value;
-            if (time == "" || time == "00:00"){
-                alertEmpty(btnName);
+            let time = document.getElementById("schedule").value;
+            if (time == "" || time == "00:00") {
+                alertEmpty(document.getElementById("schedule").name);
             } else {
                 time = {
                     "hora": time,
@@ -194,7 +280,7 @@
                     url: 'includes/functions.php',
                     type: 'POST',
                     data: time,
-                    success: function(response) {
+                    success: function (response) {
                         if (response) {
                             if (btnName == "saveSch") {
                                 console.log("Se guardo con exito");
@@ -213,12 +299,13 @@
                     },
                 });
             };
+            document.querySelector("#schedule").value = "";
         };
         function fecthHours() {
             $.ajax({
                 url: 'includes/functions.php',
                 type: 'GET',
-                success: function(response) {
+                success: function (response) {
                     let hours = JSON.parse(response);
                     let template = "";
                     hours.forEach(row => {
@@ -229,20 +316,19 @@
                                 <p>${row["hour"]}</p>
                             </div>
                         </div>
-                            
                         `
                     });
                     $('.cont_appo').html(template);
                 }
             });
         };
-        function selectHour(hour){
-            document.querySelector("#lschedule").value = hour;
-            console.log("click");
-        }
-        function alertEmpty() {
+        function selectHour(hour) {
+            document.querySelector("#schedule").value = hour;
+            document.querySelector("#hour").value = hour;
+        };
+        function alertEmpty(input) {
             $.ajax({
-                success: function() {
+                success: function () {
                     let template = `
                         <div class="alert" name="alert">
                             <div class="icoAlert">
@@ -253,10 +339,58 @@
                             </div>
                         </div>    
                         `
-                    $('#empty').html(template);
-                    $(document).on('click', function(){
-                        if(!(this.id == "empty")){
+                    let empty = `
+                        <div class="empty"></div>
+                    `
+                    switch (input) {
+                        ///////// FORM SCHEDULE ///////////
+                        case "schedule":
+                            $('#schedule').after(empty);
+                            break;
+                        ///////// FORM CUSTOMER ///////////
+                        case "dniCust":
+                            $('#dniCust').after(empty);
+                            break;
+                        case "name":
+                            $('#name').after(empty);
+                            break;
+                        case "lastname":
+                            $('#lastname').after(empty);
+                            break;
+                        case "phone":
+                            $('#phone').after(empty);
+                            break;
+                        case "email":
+                            $('#email').after(empty);
+                            break;
+                        //////// FORM APPOINTMENTS /////////
+                        case "dniAppo":
+                            $('#dniAppo').after(empty);
+                            break;
+                        case "date":
+                            $('#date').after(empty);
+                            break;
+                        case "hour":
+                            $('#hour').after(empty);
+                            break;
+                        case "adviser":
+                            $('#adviser').after(empty);
+                            break;
+                        //////// BUTTON SEARCH /////////
+                        case "dateIn":
+                            $('#dateIn').after(empty);
+                            break;
+                        case "dateEnd":
+                            $('#dateEnd').after(empty);
+                            break;
+                    };
+                    $('.empty').html(template);
+                    $('.empty').css('width', '0');
+                    $('.empty').css('height', '0');
+                    $(document).on('click', function () {
+                        if (!(this.id == "empty")) {
                             $('.alert').remove();
+                            $('.empty').remove();
                         }
                     });
                 }
