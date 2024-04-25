@@ -1,5 +1,7 @@
 :root {
     --color_primary: rgb(30, 30, 102);
+    --fond: rgb(245, 245, 245);
+    --border: rgb(112, 112, 112);
 }
 *{
     box-sizing: border-box;
@@ -70,7 +72,6 @@ img {
     background-color: var(--color_primary);
     justify-content: flex-end;
 }
-
 .main {
     display: flex;
     height: 85vh;
@@ -79,13 +80,20 @@ img {
     width: 60%;
     height: 100vh;
     background-color: rgb(53, 52, 52);
-    display: flex;
+}
+.cont_appo{   
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 7rem;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 5rem;
 }
 .hours {
-    background-color: rgb(30, 30, 102);
     width: 10rem;
     height: 5rem;
-    margin: 1rem;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,6 +166,58 @@ img {
 
 
 
+
+
+
+/**************** ALERT ********************/
+.alert {
+    position: relative ;
+    top: 9px;
+    left: -2px;
+    background: var(--fond);
+    border: 1px solid var(--border);
+    width: 19rem;
+    height: 4rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgb(88, 88, 88);
+    display: flex;
+    justify-content: space-around;
+    cursor: default;
+}
+.alert::after,
+.alert::before {
+    top: -2.5rem;
+    left: 1rem;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    transform: scaleY(-1);
+}
+.alert::after {
+    border-top-color: var(--fond);
+    border-width: 12px;
+    margin-top: 2.8px;
+    margin-left: -1px;
+}
+.alert:before {
+    border-top-color: var(--border);
+    border-width: 11px;
+    margin-top: 2.5px;
+}
+.paragraph {
+    width: 100%;
+    margin: auto 5px;
+}
+.icoAlert {
+    width: 2.5rem;
+    height: 2rem;
+    display: flex;
+    margin: auto 5px;
+    margin-left: 1rem;
+}
 
 
 
