@@ -165,6 +165,40 @@
                 };
             });
         });
+        document.querySelector("#dateIn").addEventListener('input', function (e) {
+            if (e.target !== "") {
+                let date = document.querySelector("#dateIn").value;
+                activeHours(date);
+            }
+        });
+        function activeHours(date) {
+            let searchDate = 1;
+            let btn = 0;
+            $.ajax({
+                url: 'includes/functions.php',
+                type: 'POST',
+                data: { date, searchDate, btn },
+                success: function (response) {
+                    let hours = JSON.parse(response)
+                    if (hours !== 0) {
+                        $('.hours').removeClass('hrs_notActive');
+                        $('.hours').addClass('hrs_active');
+                        hours = hours["noActive"];
+                        hours.forEach(hour => {
+                            document.querySelectorAll('.hours').forEach(function (event) {
+                                $hr = hour["hour"];
+                                let e = event.querySelector('div').parentElement;
+                                if ($hr == event.innerText) {
+                                    $(e).removeClass('hrs_active');
+                                    $(e).addClass('hrs_notActive');
+                                }
+                            });
+                        })
+                    }
+                }
+            });
+        }
+
         function search(btnName) {
             let dateIni = document.getElementById("dateIn").name;
             let dateEnd = document.getElementById("dateEnd").name;
@@ -269,6 +303,7 @@
         };
         function schedules(btnName) {
             let time = document.getElementById("schedule").value;
+            let date = document.querySelector("#dateIn").value;
             if (time == "" || time == "00:00") {
                 alertEmpty(document.getElementById("schedule").name);
             } else {
@@ -296,7 +331,10 @@
                                 console.log("No se elimino con exito");
                             };
                         };
-                    },
+                        if (date !== ""){
+                            activeHours(date);
+                        }
+                    }
                 });
             };
             document.querySelector("#schedule").value = "";
@@ -306,7 +344,7 @@
                 url: 'includes/functions.php',
                 type: 'GET',
                 success: function (response) {
-                    let hours = JSON.parse(response);
+                    let hours = JSON.parse(response)["Schedule"];
                     let template = "";
                     hours.forEach(row => {
                         let appo = row["hour"];
@@ -396,6 +434,7 @@
                 }
             });
         };
+
     </script>
 </body>
 
