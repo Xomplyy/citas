@@ -11,10 +11,12 @@
 
 html {
     font-size: 62.5%;
+    height: 100vh;
 }
 body {
     font-size: 1.6rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 100%;
 }
 body input[type="text"] {
     text-transform: capitalize;
@@ -74,11 +76,11 @@ img {
 }
 .main {
     display: flex;
-    height: 85vh;
+    height: 100%;
 }
 .appointments {
     width: 60%;
-    height: 100vh;
+    height: 100%;
     background-color: rgb(53, 52, 52);
 }
 .cont_appo{   
@@ -217,7 +219,60 @@ img {
     margin-left: 1rem;
 }
 
+/****************** MESSAGE ********************/
+.back_layer {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 111%;
+}
+.msg_info {
+    background-color: white;
+    width: 35rem;
+    margin: 0 auto;
+    margin-top: 6rem;
+    padding: 2rem;
+    border-radius: 1.8rem;
+}
+.msg_info h2 {
+    margin-bottom: 1rem;
+}
+.close_msg {
+    width: 2.3rem;
+    height: 2.3rem;
+    position: relative;
+    left: 96.5%;
+    top: -1rem;
+    cursor: pointer;
+}
+.close_msg:hover {
+    position: relative;
+    top: -1.1rem;
+    left: 97.4%;
+}
 
+.msg_accepted {
+    width: 7rem;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+.appos{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    column-gap: 1rem;
+    /* flex-flow: row;
+    flex-wrap: wrap; */
+    justify-content: space-between;
+}
+.appo{
+    margin-top: 1rem;
+    border-top: 1px solid gray;
+    padding-top: 1rem;
+    
+}
 
 
 
