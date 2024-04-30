@@ -226,8 +226,12 @@ function searchAppointment($dni)
             ];
         } else {
             $answer = [
-                "result" => false,
-                "dni" => $dni,
+                "answer" => [
+                    "result" => false,
+                ],
+                "data" => [
+                    "dni" => $dni,
+                ]
             ];
         }
         return $answer;
@@ -238,7 +242,7 @@ function searchAppointment($dni)
 function deleteAppointment($dni, $date, $hour){
     try {
         require connection();
-        $sql_id = "SELECT id_cliente FROM clientes WHERE cedula = $dni;";
+        $sql_id = "SELECT id_cliente FROM clientes WHERE cedula = '$dni';";
         $id = mysqli_query($db, $sql_id);
         if ($id->num_rows > 0) {
             $id = mysqli_fetch_array($id);

@@ -122,18 +122,16 @@ img {
     cursor: default;
 }
 .forms {
-    width: 40%;
-    display: flex;
     margin: 0 auto;
-    align-items: center;
-    padding: 3rem;
+    padding: 0 3rem;
+    padding-top: 10rem;
 }
 .form {
     border: 1px solid grey;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 2rem 2rem 1rem 2rem;
     border-radius: 2rem;
 }
 .form_appointments {

@@ -305,7 +305,7 @@ fecthHours();
                                             <img src="img/close.ico" alt="icono cerrar"></label>
                                         </div>
                                         <div class="msg_info_cust">
-                                            <h2>El número de cedula ${save["dni"]} no tiene citas asignadas</h2>
+                                            <h2>El número de cedula ${data["dni"]} no tiene citas asignadas</h2>
                                         </div>
                                         <div class="msg_accepted">
                                             <img src="img/close.ico" alt="incono de aceptado">
