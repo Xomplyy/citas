@@ -141,12 +141,14 @@ function searchCustomer($dni)
         var_dump($th);
     }
 }
+
 function deleteCustomer($dni)
 {
     try {
         require connection();
         $sql_customer = "SELECT * FROM clientes WHERE cedula = '$dni';";
         $query_customer = mysqli_query($db, $sql_customer);
+
         if ($query_customer->num_rows > 0) { //Customer d'not exist
             $sql = "DELETE FROM clientes WHERE cedula = '$dni'; ";
             mysqli_query($db, $sql);
@@ -171,6 +173,7 @@ function saveAppointment($dni, $date, $hour, $adviser)
         require connection();
         $sql = "SELECT fecha, hora FROM citas WHERE fecha = '$date' AND hora = '$hour';";
         $query = mysqli_query($db, $sql);
+
         if ($query->num_rows == 0) { //quotes d'not exist
             $save_quotes = "INSERT INTO citas (id_cliente, fecha, hora, asesor)
                             SELECT id_cliente, '$date', '$hour', '$adviser' FROM clientes WHERE cedula = '$dni';";
@@ -201,7 +204,7 @@ function searchAppointment($dni)
         $query = mysqli_query($db, $sql);
         if ($query->num_rows > 0) { //Customer d'not exist
             $sql_cust = "SELECT cedula, nombre, apellido, telefono, correo FROM clientes WHERE cedula = '$dni';";
-            $query_cust =mysqli_query($db,$sql_cust);
+            $query_cust = mysqli_query($db, $sql_cust);
             $row_cust = mysqli_fetch_assoc($query_cust);
             $ans = [
                 "result" => true,
@@ -213,11 +216,11 @@ function searchAppointment($dni)
                     "email" => $row_cust["correo"],
                 ],
             ];
-            while($row = mysqli_fetch_assoc($query)){
-                $data [] = [
-                        "date" => $row["fecha"],
-                        "hour" => $row["hora"],
-                        "adviser" => $row["asesor"],
+            while ($row = mysqli_fetch_assoc($query)) {
+                $data[] = [
+                    "date" => $row["fecha"],
+                    "hour" => $row["hora"],
+                    "adviser" => $row["asesor"],
                 ];
             };
             $answer = [
@@ -239,7 +242,8 @@ function searchAppointment($dni)
         var_dump($th);
     }
 }
-function deleteAppointment($dni, $date, $hour){
+function deleteAppointment($dni, $date, $hour)
+{
     try {
         require connection();
         $sql_id = "SELECT id_cliente FROM clientes WHERE cedula = '$dni';";
@@ -272,7 +276,38 @@ function deleteAppointment($dni, $date, $hour){
         return $answer;
     } catch (\Throwable $th) {
         var_dump($th);
-    } 
+    }
+}
+function filterDates()
+{
+    try {
+        require connection();
+        $sql = "SELECT fecha FROM citas WHERE fecha BETWEEN '2024-03-28' AND '2024-03-29'
+        ORDER BY fecha;";
+        $query = mysqli_query($db, $sql);
+        while ($row = mysqli_fetch_assoc($query)) {
+            $q [] = $row["fecha"];
+        };
+        $date = array_count_values($q);
+        foreach ($date as $key => $value) {
+            $sql_date = "SELECT hora FROM citas WHERE fecha = '$key' ORDER BY hora;";
+            $query_date = mysqli_query($db, $sql_date);
+            $hours = array();
+            while ($row = mysqli_fetch_assoc($query_date)) {
+                $hours [] = $row;
+            }
+            $dates [] = [
+                $key => $hours
+            ];
+        }
+        $data = [
+            "result" => true,
+            "filter" => $dates
+        ];
+        return $data;
+    } catch (\Throwable $th) {
+        var_dump($th);
+    }
 }
 ////////////////////////////////// FUNCTIONS /////////////////////////////////////////
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -324,6 +359,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $search = deleteAppointment($dni, $date, $hour);
                 json($search);
                 break;
+            case "search":
+                $dateIn = $_POST["dateIn"];
+                $dateEnd = $_POST["dateEnd"];
+                // $filterDate = filterDates($dateIn, $dateEnd);
+                $filterDate = filterDates();
+                json($filterDate);
+                break;
         }
     }
     if (isset($_POST["searchDate"])) {
@@ -340,3 +382,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     ];
     json($js);
 }
+

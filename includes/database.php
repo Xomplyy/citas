@@ -1,8 +1,8 @@
 <?php 
-$url = 'byndyk4rmgnqyubahgzz-mysql.services.clever-cloud.com';
-$user = 'uhulcra4upbt5pae';
-$password= 'unRXhiVle8IDTEG6O0H7';
-$nameDB = 'byndyk4rmgnqyubahgzz';
+$url = 'localhost';
+$user = 'root';
+$password= '2108';
+$nameDB = 'citas_inmobiliaria';
 $db = mysqli_connect($url, $user, $password, $nameDB);
 
 if (!$db){
