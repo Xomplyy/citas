@@ -6,39 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/calendar.ico" type="image/x-icon">
     <title>Citas</title>
-    <link rel="stylesheet" href="css/style.css">
     <script src="jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header class="header">
-        <div class="date_header">
-            <div>
-                <label for="dateIn">Fecha Inicio</label>
-                <input type="date" name="dateIn" id="dateIn">
+        <nav class="navbar navbar-expand-sm navbar-light ">
+            <div class="input-dates">
+                <div class="ipt-d1">
+                    <label for="dateIn">Fecha Inicio</label>
+                    <input class="dateIn" type="date" name="dateIn" id="dateIn">
+                </div>
+                <div class="ipt-d2">
+                    <label for="dateEnd">Fecha Final</label>
+                    <input class="dateEnd" type="date" name="dateEnd" id="dateEnd">
+                </div>
+                <div>
+                    <button class="button btn_nav btn_search" type="button" title="Buscar" name="search"
+                        id="btn_search"><img src="img/search.png" alt="icono buscar"></button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="bi bi-list"></i>
+                    </button>
+                </div>
             </div>
-            <div>
-                <label for="dateEnd">Fecha Inicio</label>
-                <input type="date" name="dateEnd" id="dateEnd">
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li>
+                        <a class="dropdown-item" name="customer" data-toggle="collapse"
+                            data-target="#navbarSupportedContent">Clientes</a>
+                        <a class="dropdown-item" name="appointment" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" data-toggle="collapse">Citas</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" name="schedules" data-toggle="collapse"
+                            data-target="#navbarSupportedContent">Administrar Horarios</a>
+                    </li>
+                    <div class="btn_header">
+                        <button class="button btn_nav" type="button" title="Horario" name="schedules"
+                            id="btn_schedules"><img src="img/appointement_management.png" alt="icono horarios"></button>
+                        <button class="button btn_nav" type="button" title="Clientes" name="customer"
+                            id="btn_customer"><img src="img/add__customer.png" alt="icono clientes"
+                                for="btn_customer"></button>
+                        <button class="button btn_nav" type="button" title="Citas" name="appointment"
+                            id="btn_appointment"><img src="img/appointments.png" alt="icono citas"></button>
+                    </div>
+                </ul>
             </div>
-            <div>
-                <button class="button btn_nav btn_search" type="button" title="Buscar" name="search"
-                    id="btn_search"><img src="img/search.png" alt="icono buscar"></button>
-            </div>
-        </div>
-        <div class="btn_header">
-            <button class="button btn_nav" type="button" title="Horario" name="schedules" id="btn_schedules"><img
-                    src="img/appointement_management.png" alt="icono horarios"></button>
-            <button class="button btn_nav" type="button" title="Clientes" name="customer" id="btn_customer"><img
-                    src="img/add__customer.png" alt="icono clientes" for="btn_customer"></button>
-            <button class="button btn_nav" type="button" title="Citas" name="appointment" id="btn_appointment"><img
-                    src="img/appointments.png" alt="icono citas"></button>
-        </div>
+        </nav>
     </header>
     <main class="main">
-        <div class="appointments">
-
-        </div>
+        <!-- Appointments zone -->
+        <div class="appointments"></div> 
         <div class="forms">
             <div class="form_appointments form">
                 <h2>Citas</h2>
@@ -139,7 +163,20 @@
             </div>
         </div>
     </main>
-     <script src="main.js"></script>
+
+    <!-- Button for window modal -->
+    <button type="button" class="btn-modal" data-toggle="modal" data-target="#exampleModal" hidden></button>
+
+    <!-- BOOSTRAP -->
+    <script type="text/css" src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+    </script>
+
+    <!-- JAVA SCRIPT FUNCTIONS -->
+    <script src="main.js"></script>
 </body>
 
 </html>

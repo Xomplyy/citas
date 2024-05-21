@@ -23,27 +23,39 @@ function getSchedule()
     }
     return $hours;
 }
-function saveSchedules()
+function saveSchedules($hora)
 {
     try {
         require connection();
-        $hora = $_POST["hora"];
-        $sql = "INSERT INTO horario (hora) VALUES ('$hora');";
-        $query = mysqli_query($db, $sql);
-        return $query;
+        $sql_h = "SELECT hora FROM horario WHERE hora = '$hora';";
+        $query_h = mysqli_query($db, $sql_h);
+        if ($query_h->num_rows == 0) {
+            $sql = "INSERT INTO horario (hora) VALUES ('$hora');";
+            mysqli_query($db, $sql);
+            return true;
+        } else {
+            //This schedule already exist
+            return false;
+        }
     } catch (\Throwable $th) {
         //throw $th;
         var_dump($th);
     }
 };
-function deleteSchedules()
+function deleteSchedules($hora)
 {
     try {
         require connection();
-        $hora = $_POST["hora"];
-        $sql = "DELETE FROM horario WHERE (hora = '$hora');";
-        $query = mysqli_query($db, $sql);
-        return $query;
+        $sql_h = "SELECT hora FROM horario WHERE hora = '$hora';";
+        $query_h = mysqli_query($db, $sql_h);
+        if ($query_h->num_rows > 0) {
+            $sql = "DELETE FROM horario WHERE (hora = '$hora');";
+            mysqli_query($db, $sql);
+            return true;
+        } else {
+            //This schedule don't exist
+            return false;
+        }
     } catch (\Throwable $th) {
         // throw $th;
         var_dump($th);
@@ -53,11 +65,11 @@ function getHours($date)
 {
     try {
         require connection();
-        $sql = "SELECT hora FROM citas WHERE fecha = '$date'";
+        $sql = "SELECT hora FROM citas WHERE fecha = '$date';";
         $query = mysqli_query($db, $sql);
         if ($query->num_rows > 0) {
             while ($row = mysqli_fetch_assoc($query)) {
-                $rowH = substr($row["hora"], 0, 5);
+                $rowH = substr($row["hora"], 0, 5); // correct format of hours
                 $hours[] = array(
                     "hour" => $rowH
                 );
@@ -150,7 +162,7 @@ function deleteCustomer($dni)
         $query_customer = mysqli_query($db, $sql_customer);
 
         if ($query_customer->num_rows > 0) { //Customer d'not exist
-            $sql = "DELETE FROM clientes WHERE cedula = '$dni'; ";
+            $sql = "DELETE FROM clientes WHERE cedula = '$dni';";
             mysqli_query($db, $sql);
             $answer = [
                 "result" => true,
@@ -278,32 +290,39 @@ function deleteAppointment($dni, $date, $hour)
         var_dump($th);
     }
 }
-function filterDates()
+function filterDates($dateIn, $dateEnd)
 {
     try {
         require connection();
-        $sql = "SELECT fecha FROM citas WHERE fecha BETWEEN '2024-03-28' AND '2024-03-29'
+        $sql = "SELECT fecha FROM citas WHERE fecha BETWEEN '$dateIn' AND '$dateEnd'
         ORDER BY fecha;";
         $query = mysqli_query($db, $sql);
-        while ($row = mysqli_fetch_assoc($query)) {
-            $q [] = $row["fecha"];
-        };
-        $date = array_count_values($q);
-        foreach ($date as $key => $value) {
-            $sql_date = "SELECT hora FROM citas WHERE fecha = '$key' ORDER BY hora;";
-            $query_date = mysqli_query($db, $sql_date);
-            $hours = array();
-            while ($row = mysqli_fetch_assoc($query_date)) {
-                $hours [] = $row;
+        if ($query->num_rows > 0) {
+            while ($row = mysqli_fetch_assoc($query)) {
+                $q[] = $row["fecha"];
+            };
+            $date = array_count_values($q);
+            foreach ($date as $key => $value) {
+                $sql_date = "SELECT hora FROM citas WHERE fecha = '$key' ORDER BY hora;";
+                $query_date = mysqli_query($db, $sql_date);
+                $hours = array();
+                while ($row = mysqli_fetch_assoc($query_date)) {
+                    $hours[] = $row;
+                }
+                $dates[] = [
+                    $key => $hours
+                ];
             }
-            $dates [] = [
-                $key => $hours
+            $data = [
+                "result" => true,
+                "filter" => $dates
             ];
-        }
-        $data = [
-            "result" => true,
-            "filter" => $dates
-        ];
+        } else {
+            $data = [
+                "result" => false,
+                "msg" => "No hay citas en estas fechas"
+            ];
+        };
         return $data;
     } catch (\Throwable $th) {
         var_dump($th);
@@ -315,10 +334,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $btn = $_POST["btn"];
         switch ($_POST["btn"]) {
             case "saveSch":
-                saveSchedules();
+                $hora = $_POST["hora"];
+                $saveSch = saveSchedules($hora);
+                json($saveSch);
                 break;
             case "deleteSch":
-                deleteSchedules();
+                $hora = $_POST["hora"];
+                $deleteSch = deleteSchedules($hora);
+                json($deleteSch);
                 break;
             case "saveCust":
                 $dni = $_POST["dni"];
@@ -362,8 +385,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             case "search":
                 $dateIn = $_POST["dateIn"];
                 $dateEnd = $_POST["dateEnd"];
-                // $filterDate = filterDates($dateIn, $dateEnd);
-                $filterDate = filterDates();
+                $filterDate = filterDates($dateIn, $dateEnd);
                 json($filterDate);
                 break;
         }
@@ -382,4 +404,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     ];
     json($js);
 }
-
